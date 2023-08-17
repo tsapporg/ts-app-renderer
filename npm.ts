@@ -47,14 +47,6 @@ const npmPackage: any = {
     '@webgpu/types': '0.1.26'
   },
   devDependencies: {
-    'typescript': '4.8.4',
-    '@types/node': '18.11.18', //TODO 18.2.1?
-    'ts-node': '10.9.1',
-
-    // Cross-platform build support:
-    'shx': '0.3.4', // Used to invoke cross-platform build commands.
-    'del': '5.0.0', // Used for cross-platform rm.
-    'cross-env': '5.2.1' // Used to set cross-platform env variables.
   }
 }
 
