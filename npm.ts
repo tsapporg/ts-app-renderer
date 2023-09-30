@@ -1,10 +1,9 @@
-const babylonVersion = '5.48.0', // Sumerian hosts requires '4.2.0' version and we need '5.38.0'.
-  threeVersion = '0.150.1'; // Sumerian hosts requires '0.127.0' version and we need '0.144.0'.
+const babylonVersion = '5.48.0',
+  threeVersion = '0.150.1'; 
 
 const npmPackage: any = {
   name: 'ts-app-renderer',
   version: '0.0.0',
-  description: 'spatial-web-starter application renderer',
   private: false,
   license: 'MIT',
   type: 'module',
@@ -12,14 +11,6 @@ const npmPackage: any = {
     '.': './src/index.ts'
   },
   types: './src/index.ts',
-  /*
-  publishConfig: {
-    exports: {
-      '.': './dist/index.js'
-    },
-    types: './dist/index.d.ts'
-  },
-  */
   dependencies: {
     // App:
     'ts-app-logger': '../ts-app-logger',

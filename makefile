@@ -1,8 +1,5 @@
-# This file is responsible for defining ts-app-renderer developer commands.
 install:
-#make clean
-	if [ -d ../../packages ]; then make copy-src-from-monorepo; make install/packages; fi
-	npm install -g mainframenzo/ts-npm
+	npm install -g ../ts-npm
 	ts-npm install
 
 # TODO Just create a fork - this is a hack for missing @types for pngjs/browser.
@@ -21,21 +18,7 @@ install:
 clean:
 	npx shx rm -f ./package-lock.json
 
-copy-src-from-monorepo:
-	cp ../../config/tsconfig.base.json ./config/
-
-install/packages:
-#cd ../ts-app-logger; make install
-	
 tests:
-	make test/unit
-	make test/functional
-test/unit:
-	npx cross-env app_location=local app_stage=local app_env=unit_test node --trace-warnings --experimental-specifier-resolution=node --experimental-modules --no-warnings --loader ts-node/esm ./test/renderer.headless.test.unit.ts --test
-test/functional:
-	@echo 'TODO'
-
-
-
-
-
+	node --test --loader ts-node/esm \
+		--experimental-specifier-resolution=node --experimental-modules --no-warnings \
+		./test/renderer.headless.test.unit.ts
