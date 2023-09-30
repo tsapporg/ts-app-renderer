@@ -5,7 +5,7 @@
 #  to update downstream shared dependencies for TSAPP packages.
 
 superclean:
-	make clean
+#make clean
 	npx shx rm -f ./package-lock.json
 	npx shx rm -f ./package.json
 	npx shx rm -rf node_modules
