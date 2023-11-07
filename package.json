@@ -1,0 +1,45 @@
+{
+  "@comment": "This file was generated from npm*.ts .",
+  "name": "ts-app-renderer",
+  "version": "0.0.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "dependencies": {
+    "ts-app-logger": "../ts-app-logger",
+    "@babylonjs/core": "5.48.0",
+    "@babylonjs/loaders": "5.48.0",
+    "@babylonjs/materials": "5.48.0",
+    "@babylonjs/post-processes": "5.48.0",
+    "@babylonjs/procedural-textures": "5.48.0",
+    "@babylonjs/serializers": "5.48.0",
+    "@babylonjs/gui": "5.48.0",
+    "@babylonjs/inspector": "5.48.0"
+  },
+  "devDependencies": {
+    "typescript": "5.2.2",
+    "@types/node": "18.16.0",
+    "ts-node": "10.9.1",
+    "tslib": "2.4.0",
+    "shx": "0.3.4",
+    "del": "5.0.0",
+    "cross-env": "5.2.1",
+    "concurrently": "7.5.0",
+    "nodemon": "2.0.20",
+    "onchange": "7.1.0",
+    "esbuild": "0.16.7",
+    "@babel/cli": "7.23.0",
+    "@babel/core": "7.23.2",
+    "@babel/preset-typescript": "7.23.2",
+    "@babel/preset-env": "7.23.2",
+    "pkg": "5.8.1"
+  }
+}
