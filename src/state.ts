@@ -2,9 +2,9 @@
 import * as log from 'ts-app-logger';
 log.debug('state loaded');
 
-@log.LogClass()
+//@log.LogClass()
 export class RendererState {
-  @log.Log()
+  //@log.Log()
   async loadOrInit() {
     return;
   }

@@ -36,7 +36,7 @@ export default abstract class AScene implements IScene {
   //@log.Log()
   cast<T>(): T { return this.renderer.getScene() as T; }
 
-  @log.Log()
+  //@log.Log()
   async init() {
     if (this.initialized) { return; }; // New level loaded. Currently does nothing after first level loaded.
     
@@ -51,7 +51,7 @@ export default abstract class AScene implements IScene {
     this.initialized = true;
   }
 
-  @log.Log()
+  //@log.Log()
   protected initBabylonScene() {
     this.configureBabylonShadows();
 
@@ -63,12 +63,12 @@ export default abstract class AScene implements IScene {
       this.disableBabylonCameraZoom();
     }
   }
-  @log.Log()
+  //@log.Log()
   protected initThreeScene() {
 
   }
 
-  @log.Log()
+  //@log.Log()
   private configureBabylonShadows() {
     const shadowLight = new DirectionalLight('shadowLight', new BabylonVector3(0.8, -2, -1), this.renderer.getScene() as BabylonScene);
     shadowLight.diffuse = new BabylonColor3(1, 0.9, 0.62);
@@ -81,7 +81,7 @@ export default abstract class AScene implements IScene {
     (this.renderer.getScene() as BabylonScene).meshes.forEach(mesh => { this.shadowGenerator?.addShadowCaster(mesh); });
   }
 
-  @log.Log() // TODO
+  //@log.Log() // TODO
   protected disableBabylonCameraRotation() {
     //const camera = this.getRenderer().getCamera() as BabylonFreeCamera;
     //const cameraState = { x: camera.alpha, y: camera.beta };
@@ -94,7 +94,7 @@ export default abstract class AScene implements IScene {
     });
   }
 
-  @log.Log() // TODO
+  //@log.Log() // TODO
   protected disableBabylonCameraZoom() {
     /*
     //const camera = this.getRenderer().getCamera() as BabylonFreeCamera;
@@ -106,7 +106,7 @@ export default abstract class AScene implements IScene {
   //@log.Log()
   async render(onUpdate?: CallableFunction, onRender?: CallableFunction, onFrame?: CallableFunction) {  await this.renderer.render(onUpdate, onRender, onFrame); }
 
-  @log.Log() 
+  //@log.Log() 
   async unload() {
     if (this.config.rendererLibrary === 'three') {
       this.threeOnDestroy();

@@ -22,7 +22,7 @@ import { Vector3 as BabylonVector3 } from '@babylonjs/core/Maths/math';
 //import { DebugLayer as BabylonDebugLayer } from '@babylonjs/core/Debug/debugLayer';
 //import * as viewport from './viewport';
 
-@log.LogClass()
+//@log.LogClass()
 export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
   webGLRenderingContext?: WebGLRenderingContext | WebGL2RenderingContext;
   engine?: BabylonEngine;
@@ -39,7 +39,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
 
   getCamera(): T { return this._camera as T; }
 
-  @log.Log()
+  //@log.Log()
   init() {
     super.setupViewport();
     this.setupEngine();
@@ -50,7 +50,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
     // TODO await this.xrRenderer.init();
   }
 
-  @log.Log()
+  //@log.Log()
   private setupEngine() {
     this.engine = new BabylonEngine(this.sceneElement!, true, {
       ...this.defaultWebGLConfig
@@ -61,7 +61,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
     this.engine.adaptToDeviceRatio = true;
   }
 
-  @log.Log()
+  //@log.Log()
   private setupScene() {
     this.scene = new BabylonScene(this.engine!);
     
@@ -72,7 +72,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
     //this.camera.attachControl(this.sceneElement!, true);
   }
 
-  @log.Log()
+  //@log.Log()
   private configureDebugging() {
     // TODO the inspector is totally broken style-wise.
     if (this.config.debug) { 
@@ -85,7 +85,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
     }
   }
 
-  @log.Log()
+  //@log.Log()
   private configureCoordinateSystem() {
     //this.scene!.useRightHandedSystem = true;
   }
@@ -121,7 +121,7 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
   }
   */
 
-  @log.Log()
+  //@log.Log()
   static toVector3(vector3: number[]): BabylonVector3 {
     return new BabylonVector3(vector3[0], vector3[1], vector3[2]);
   }
@@ -196,32 +196,32 @@ export default class BabylonRenderer<T> extends ARenderer implements IRenderer {
     */
   }
 
-  @log.Log()
+  //@log.Log()
   setCameraPositionInternal(vector3: BabylonVector3) {
     (this.camera as Camera).position = vector3;
   }
 
-  @log.Log()
+  //@log.Log()
   setCameraPosition(vector3: number[]) {
     (this.camera as Camera).position = BabylonRenderer.toVector3(vector3);
   }
   
   // TODO deprecate
-  @log.Log() 
+  //@log.Log() 
   setDefaultCameraPosition(vector3: number[]) {
     (this.camera as Camera).position = BabylonRenderer.toVector3(vector3);
   }
 
-  @log.Log() 
+  //@log.Log() 
   setDefaultCameraTarget(vector3: number[]) {
     (this.camera as TargetCamera).setTarget(BabylonRenderer.toVector3(vector3));
   }
 
   // TODO not logging
-  @log.Log()
+  //@log.Log()
   override onResize() { this.engine?.resize(true); }
 
-  @log.Log()
+  //@log.Log()
   override dispose() {
     super.dispose();
 

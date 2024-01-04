@@ -14,7 +14,7 @@ export default abstract class ALevel implements ILevel {
 
   constructor(scene: IScene) { this.scene = scene; }
 
-  @log.Log() 
+  //@log.Log() 
   async load() {
     await this.scene.init();
 
@@ -25,7 +25,7 @@ export default abstract class ALevel implements ILevel {
     await this.scene.render(() => { this.onUpdate(); }, () => { this.onRender(); }, (pixels: Uint8Array | string) => { this.onFrame(pixels); });
   }
 
-  @log.Log() 
+  //@log.Log() 
   private async beforeLevelLoaded() {
     const fnsForRenderer = new Map<string, CallableFunction>();
     fnsForRenderer.set('babylon', () => { this.beforeBabylonLevelLoaded(); });
@@ -33,12 +33,12 @@ export default abstract class ALevel implements ILevel {
     await fnForRenderer(this.scene.getRenderer().getConfig().rendererLibrary, fnsForRenderer);
   }
 
-  @log.Log()
+  //@log.Log()
   protected async beforeBabylonLevelLoaded() {
 
   }
 
-  @log.Log() 
+  //@log.Log() 
   private async loadLevel() {
     const fnsForRenderer = new Map<string, CallableFunction>();
     fnsForRenderer.set('babylon', () => { this.loadBabylonLevel(); });
@@ -46,10 +46,10 @@ export default abstract class ALevel implements ILevel {
     await fnForRenderer(this.scene.getRenderer().getConfig().rendererLibrary, fnsForRenderer);
   }
 
-  @log.Log()
+  //@log.Log()
   protected async loadBabylonLevel() {}
 
-  @log.Log()
+  //@log.Log()
   private async afterLevelLoaded() {
     const fnsForRenderer = new Map<string, CallableFunction>();
     fnsForRenderer.set('babylon', () => { this.afterBabylonLevelLoaded(); });
@@ -57,7 +57,7 @@ export default abstract class ALevel implements ILevel {
     await fnForRenderer(this.scene.getRenderer().getConfig().rendererLibrary, fnsForRenderer);
   }
 
-  @log.Log()
+  //@log.Log()
   protected async afterBabylonLevelLoaded() {}
 
   // Apply updates to level.

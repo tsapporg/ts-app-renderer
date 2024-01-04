@@ -29,19 +29,19 @@ export default abstract class ARenderer {
     if (this.config.sceneElement) { this.sceneElement = this.config.sceneElement; }
   }
 
-  @log.Log()
+  //@log.Log()
   protected onResize() {}
  
   //@log.Log()
   getConfig(): RendererConfig { return this.config; }
 
-  @log.Log()
+  //@log.Log()
   protected setupViewport() {
     // If not managed elsewhere, get HTMLCanvasElement to bind scene to.
     if (!this.sceneElement) { this.sceneElement = document.getElementById(this.config.sceneElementID) as HTMLCanvasElement; }
   }
 
-  @log.Log()
+  //@log.Log()
   protected dispose() {
     window?.removeEventListener('resize', this.onResize);
   }

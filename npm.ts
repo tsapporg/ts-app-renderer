@@ -16,7 +16,7 @@ const npmPackage: any = {
   },
   dependencies: {
     // App:
-    'ts-app-logger': '../ts-app-logger',
+    'ts-app-logger': 'github:tsapporg/ts-app-logger#ccc4245cb7ca21cb5713d714eb67f1d507ceaefc',
 
     // Renderers:
     '@babylonjs/core': babylonVersion,

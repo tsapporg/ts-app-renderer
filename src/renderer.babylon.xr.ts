@@ -17,7 +17,7 @@ import { WebXRState } from '@babylonjs/core/XR/webXRTypes';
 import { WebXRInputSource } from '@babylonjs/core/XR/webXRInputSource';
 import { WebXRAbstractMotionController } from '@babylonjs/core/XR/motionController/webXRAbstractMotionController';
 
-@log.LogClass()
+//@log.LogClass()
 export default class BabylonXRRenderer { //IXRRenderer {
   private engine: BabylonEngine;
   private scene: BabylonScene;
@@ -36,7 +36,7 @@ export default class BabylonXRRenderer { //IXRRenderer {
     this.scene = scene;
   }
 
-  @log.Log()
+  //@log.Log()
   async init() {
     this.webXrDefaultExp = await WebXRDefaultExperience.CreateAsync(this.scene, {
       optionalFeatures: true
@@ -100,7 +100,7 @@ export default class BabylonXRRenderer { //IXRRenderer {
     )
   }
 
-  @log.Log()
+  //@log.Log()
   async dispose() {
     if (this.webXrDefaultExp) {
       await this.webXrDefaultExp.baseExperience.exitXRAsync();

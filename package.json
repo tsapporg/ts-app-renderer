@@ -1,20 +1,7 @@
 {
-  "@comment": "This file was generated from npm*.ts .",
-  "name": "ts-app-renderer",
-  "version": "0.0.0",
-  "private": false,
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "types": "./src/index.ts",
-  "publishConfig": {
-    "main": "./dist/index.mjs",
-    "types": "./dist/index.d.ts"
-  },
+  "@comment": "This file was generated from /Users/franklovecchio/Dropbox/_software/github/tsapporg/ts-app-renderer/npm*.ts .",
   "dependencies": {
-    "ts-app-logger": "../ts-app-logger",
+    "ts-app-logger": "github:tsapporg/ts-app-logger#ccc4245cb7ca21cb5713d714eb67f1d507ceaefc",
     "@babylonjs/core": "5.48.0",
     "@babylonjs/loaders": "5.48.0",
     "@babylonjs/materials": "5.48.0",
@@ -41,5 +28,18 @@
     "@babel/preset-typescript": "7.23.2",
     "@babel/preset-env": "7.23.2",
     "pkg": "5.8.1"
+  },
+  "name": "ts-app-renderer",
+  "version": "0.0.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   }
 }
